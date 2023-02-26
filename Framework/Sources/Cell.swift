@@ -77,7 +77,7 @@ open class Cell: UIView {
     }
 
     func setup() {
-        backgroundColor = .white
+        //backgroundColor = .white
 
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
