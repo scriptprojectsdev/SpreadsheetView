@@ -80,6 +80,12 @@ public protocol SpreadsheetViewDelegate: class {
     ///   - spreadsheetView: The spreadsheet view object that is notifying you of the selection change.
     ///   - indexPath: The index path of the cell that was deselected.
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didDeselectItemAt indexPath: IndexPath)
+    
+    /// Tells the delegate that the row header offset changed.
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, rowHeaderOffsetWillChange offset: CGFloat)
+    
+    /// Tells the delegate that the column header offset changed.
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, columnHeaderOffsetWillChange offset: CGFloat)
 }
 
 extension SpreadsheetViewDelegate {

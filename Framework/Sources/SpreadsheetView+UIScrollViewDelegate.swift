@@ -36,7 +36,14 @@ extension SpreadsheetView: UIScrollViewDelegate {
             rowHeaderView.frame.origin.y = 0
         }
 
+        if rowHeaderView.contentOffset.x != tableView.contentOffset.x {
+            delegate?.spreadsheetView(self, rowHeaderOffsetWillChange: tableView.contentOffset.x)
+        }
         rowHeaderView.contentOffset.x = tableView.contentOffset.x
+        
+        if columnHeaderView.contentOffset.y != tableView.contentOffset.y {
+            delegate?.spreadsheetView(self, columnHeaderOffsetWillChange: tableView.contentOffset.y)
+        }
         columnHeaderView.contentOffset.y = tableView.contentOffset.y
 
         setNeedsLayout()
